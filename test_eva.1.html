@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <div id="leftsidebar">
+        <ul>
+            <li><a href="#">Browse Buildings</a></li>
+            <li><a href="#">Browse Services</a></li>
+            <li><a href="#">Browse By Interest</a></li>
+        </ul>
+        <div id="sidebar-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('#sidebar-btn').click(function(){
+            $('#sidebar').toggleClass('visible');
+        });
+    });
+    </script>
+
+</body>
+</html>
