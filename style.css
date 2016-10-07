@@ -36,7 +36,7 @@ form{
 	height:100%;
 	display:block;
 	position:absolute;
-	right:-200px;
+	right:-100px;
 	top:0px;
 	transition:right 0.3s linear;
 }
@@ -48,7 +48,7 @@ form{
 }
 
 #sidebar.visibleR{
-	right:0px;
+	right:200px;
 	transition:right 0.3s linear;
 }
 
@@ -97,6 +97,13 @@ ul li a{
 }
 
 #sidebar-btn span{
+	height:3px;
+	background:white;
+	margin-bottom:5px;
+	display:block;
+}
+
+#sidebar-btnR span{
 	height:3px;
 	background:white;
 	margin-bottom:5px;
