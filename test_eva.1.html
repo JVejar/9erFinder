@@ -18,13 +18,31 @@
 			<li><a href="#">Services</a></li>
 			<li><a href="#">Interest</a></li>
 		</ul>
-
 		<div id="sidebar-btn">
 			<span></span>
 			<span></span>
 			<span></span>
 		</div>
-
+	</div>
+	
+	<div id="sidebarR">
+		<h3>Logon Section</h3>
+		<ul>
+			<li><a href="#">Login</a></li>
+				<form action="action_page.php">
+    				<input type="text" name="search" placeholder="Username">
+    				
+    				<input type="text" name="search" placeholder="Password">
+    				<input type="submit" value="Submit">
+				</form>
+			<li><a href="#">Register</a></li>
+			
+		</ul>
+		<div id="sidebar-btnR">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 	</div>
 
 
@@ -34,6 +52,12 @@
 	$(document).ready(function(){
 		$('#sidebar-btn').click(function(){
 			$('#sidebar').toggleClass('visible');
+		});
+	});
+	
+	$(document).ready(function(){
+		$('#sidebar-btnR').click(function(){
+			$('#sidebarR').toggleClass('visibleR');
 		});
 	});
 
