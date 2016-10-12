@@ -6,9 +6,30 @@
 </head>
 <body>
 	<h1><img src="logo.png" height="45"> Niner Finder</h1>
-	<banner><center><img src="background.jpeg" class=".banner"></center></banner>
+	<banner><center><img src="background.jpeg" width="auto"></center></banner>
 	
-	<center>
+	
+
+    <div id="mySidenav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <img src="logo.png" margin="10px">
+	  <a href="#">Login</a>
+	  <form action="action_page.php">
+		<input type="text" name="username" placeholder="Username">
+		<input type="text" name="password" placeholder="Password">
+		<br/>
+		<input type="submit" value="Submit">
+		</form>	
+	  <a href="#">Register</a>
+	</div>
+	
+	<script>
+	function openNav() {
+	    document.getElementById("mySidenav").style.width = "250px";}
+	function closeNav() {
+	    document.getElementById("mySidenav").style.width = "0";}
+	</script>
+	
 	<table>
 		<tr>
 			<th>Menu</th>
@@ -18,24 +39,15 @@
 			    	<input type="submit" value="Submit">
 				</form>	
 			</th>
-			<th>Profile</th>
+			<th style="cursor:pointer" onclick="openNav()">Profile</th>
 		</tr>
 		<tr >
 			<th colspan="3">
-				<iframe src="https://www.google.com/maps/d/embed?mid=1V64krY_xtrVuWH8ckfpS2oQGWDc" width="500" height="500" style="float:middle">
+				<iframe src="https://www.google.com/maps/d/embed?mid=1V64krY_xtrVuWH8ckfpS2oQGWDc" width="700" height="500" style="float:middle">
 			</th
 		</tr>
 		
 	</table>
-	</center>
-	
-
-	
-
-	
-
-
-
 
 </body>
 </html>
