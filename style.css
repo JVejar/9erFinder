@@ -15,10 +15,15 @@ h1{
 	border-bottom-style: solid;
 	border-bottom-color: black;
 	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 h3{
 	color:white;
+}
+
+nomargin{
+	margin: 0px;
 }
 
 form{
@@ -37,5 +42,11 @@ table{
 }
 
 th{
+	margin-top: 0px;
 	color:white;
+	font-family: georgia;
+}
+
+banner{
+	max-width: 600px;
 }
