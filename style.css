@@ -18,6 +18,10 @@ h1{
 	margin-bottom: 0px;
 }
 
+h2{
+	color:white;
+	left: 10px;
+}
 h3{
 	color:white;
 }
@@ -41,6 +45,8 @@ table{
 	margin-right: auto;
 	top: -200px;
 	position: relative;
+	width: 100%;
+	max-width: 800px;
 }
 
 th{
@@ -95,3 +101,7 @@ table{
   .sidenav a {font-size: 18px;}
 }
 
+image{
+	width:254px;
+	height:208px;
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Index</title>
+	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -9,8 +9,7 @@
 	<banner><center><img src="background.jpeg" width="auto"></center></banner>
 	
 	
-
-    <div id="mySidenav" class="sidenav">
+    <div id="logonNav" class="sidenav">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <img src="logo.png" margin="10px">
 	  <a href="#">Login</a>
@@ -19,15 +18,36 @@
 		<input type="text" name="password" placeholder="Password">
 		<br/>
 		<input type="submit" value="Submit">
+
 		</form>	
-	  <a href="#">Register</a>
+	  <a href="createAccount.html" >Not register?  Sign up now!</a>
 	</div>
+	
+	
+	
+	<div id="profileNav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <img src="logo.png" margin="10px">
+	  <h2>Welcome back NAME!</h2>
+	  
+	  <a href="createAccount.html" >Events</a>
+	</div>
+	
+	
+	
+	
 	
 	<script>
 	function openNav() {
-	    document.getElementById("mySidenav").style.width = "250px";}
+		logon=true;
+		if (logon==false)
+	    document.getElementById("logonNav").style.width = "250px";
+		else{
+	    document.getElementById("profileNav").style.width = "250px";
+		}
+	}
 	function closeNav() {
-	    document.getElementById("mySidenav").style.width = "0";}
+	    document.getElementById("profileNav").style.width = "0";}
 	</script>
 	
 	<table>
@@ -43,7 +63,7 @@
 		</tr>
 		<tr >
 			<th colspan="3">
-				<iframe src="https://www.google.com/maps/d/embed?mid=1V64krY_xtrVuWH8ckfpS2oQGWDc" width="700" height="500" style="float:middle">
+				<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1V64krY_xtrVuWH8ckfpS2oQGWDc" width="100%" height="500" style="float:middle">
 			</th
 		</tr>
 		
