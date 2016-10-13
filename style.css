@@ -18,9 +18,23 @@ h1{
 	margin-bottom: 0px;
 }
 
+
+a {
+  text-decoration: none;
+  
+}
+
 h2{
-	color:white;
-	left: 10px;
+	color: white;
+	font-family: georgia, serif;
+	text-align: center;
+	text-shadow: 3px 4px black;
+	font-size: 60px;
+	background-color: #0c5622;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 h3{
 	color:white;
@@ -46,7 +60,32 @@ table{
 	top: -200px;
 	position: relative;
 	width: 100%;
-	max-width: 800px;
+	max-width: 450px;
+	
+}
+
+#t01{
+	top: 0px;
+	width: auto;
+}
+
+#f01{
+	padding-top: 0px;
+	bottom: 5px;
+	width: 100%;
+	left: 0px;
+	height: 80px;
+	color: white;
+	font-family: georgia;
+	
+}
+
+fieldset {
+    border: 1px dotted #61B5CF;
+    margin: 0ex;
+    padding: 0.6em;
+    float:none;
+    width:40%;
 }
 
 th{
@@ -101,7 +140,7 @@ table{
   .sidenav a {font-size: 18px;}
 }
 
-image{
+#test{
 	width:254px;
 	height:208px;
 }

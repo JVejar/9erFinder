@@ -5,42 +5,54 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h1><img src="logo.png" height="45"> Niner Finder</h1>
-	<banner><center><img src="background.jpeg" width="auto"></center></banner>
-	
-	<table>
-		<td height="100"></td>
-		<form action="action_page.php">
-	
-		<tr><th>First Name</th>
-		    <td><input type="text" name="first_name" placeholder="Firstname"></td>
-		</tr>
-		
-		<tr><th>Last Name</th>
-		    <td><input type="text" name="last_name" placeholder="Lastname"></td>
-		</tr>
-		
-		<tr><th>UNCC Username</th>
-		    <td><input type="text" name="user_name" placeholder="Username"></td>
-		</tr>
-		
-		<tr>
-		<th>Password</th>
-		    <td><input type="text" name="password" placeholder="Password"></td>
-		</tr>
-		
-		<tr>
-		    <th>Re-enter Password</th>
-		    <td><input type="text" name="verify_password" placeholder="Password"></td>
-		</tr>
-			<td><input type="submit" value="Submit"></td>
-		
-		<tr><th>ErrorCheck</th>
-		    <td><input type="text" name=" " placeholder="Error Checking"></td>
-		</tr>
-		
-		</form>	
-	</table>
 
+	<h2><a href="createAccount.html"><img src="logo.png" height="45"> Niner Finder</a></h1>
+	<banner><center><img src="background.jpeg" width="auto" ></center></banner>
+	
+	<table id="t01" cellpadding="0px" cellspacing="40px">
+	<form  action="action_page.php" onsubmit="if(document.getElementById('agree').checked) {return true;} else {alert('Pleaase read and agree to the Terms and Conditions before continuing'); return false;}">
+	
+		<tr>
+			<th align="left" >First Name:</th>
+		    <td>
+		    	<input type="text" name="first_name" placeholder="First Name" value = "" required 
+		    	oninvalid="this.setCustomValidity('Enter First Name Here')" 
+		    	oninput="setCustomValidity('')" >
+	    	</td>
+		</tr>
+		
+		<tr>
+			<th align="left">Last Name:</th>
+		    <td><input type="text" name="last_name" placeholder="Last Name" value = "" required ></td>
+		</tr>
+		
+		<tr><th align="left">UNCC Username:</th>
+		    <td><input type="text" name="user_name" placeholder="Username" value = "" required ></td>
+		</tr>
+		
+		<tr>
+			<th align="left">Password:</th>
+		    <td><input type="text" name="password" placeholder="Password" value = "" required ></td>
+		</tr>
+		
+		<tr>
+		    <th align="left">Re-enter Password:</th>
+		    <td><input type="text" name="verify_password" placeholder="Re-enter Password" value = "" required ></td>
+		</tr>
+		
+		
+		<th><input type="checkbox" name="checkbox" value="check" id="agree"  /> I have read and agreed to the Terms &amp; Conditions Privacy Policy</th>
+		<td><input type="submit" name="submit" value="Submit" ></td>
+	</table>
+	</form>
+
+ 	<!--action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data"-->
+	<form>
+		<img src="captcha.php" />
+		<p><input name="captcha" type="text" id="captcha" size="15" /> <br /></p>
+		<input type="submit" name="submit" value="submit" />
+		<input type ="reset" name="reset" value="clear"/>
+	</form>
 	</body>
 </html>
+

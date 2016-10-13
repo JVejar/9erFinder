@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h1><img src="logo.png" height="45"> Niner Finder</h1>
+	<h1><a href="home.html"><img src="logo.png" height="45"> Niner Finder</a></h1>
 	<banner><center><img src="background.jpeg" width="auto"></center></banner>
 	
 	
@@ -28,8 +28,10 @@
 	<div id="profileNav" class="sidenav">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <img src="logo.png" margin="10px">
-	  <h2>Welcome back NAME!</h2>
+	  <h3>Welcome back NAME!</h3>
 	  
+	 
+	  <a href="profile.html" >My Profile</a>
 	  <a href="events.html" >Events</a>
 	</div>
 	
@@ -39,7 +41,7 @@
 	
 	<script>
 	function openNav() {
-		logon=false;
+		logon=true;
 		if (logon==false)
 	    document.getElementById("logonNav").style.width = "250px";
 		else{
