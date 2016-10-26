@@ -18,6 +18,30 @@ h1{
 	margin-bottom: 0px;
 }
 
+#cbox1{
+	color: white;
+	font-family: georgia, serif;
+	text-align: center;
+	text-shadow: 3px 4px black;
+	font-size: 60px;
+	background-color: #0c5622;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+pagetitle{
+	color: white;
+	font-family: georgia, serif;
+	text-align: center;
+	text-shadow: 3px 4px black;
+	font-size: 30px;
+	background-color: #0c5622;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	margin: 0px;
+}
 
 a {
   text-decoration: none;
@@ -57,7 +81,7 @@ table{
 	/*margin-top: 0px;*/
 	margin-left: auto;
 	margin-right: auto;
-	top: -200px;
+	top: -5px;
 	position: relative;
 	width: 100%;
 	max-width: 450px;
@@ -144,3 +168,9 @@ table{
 	width:254px;
 	height:208px;
 }
+
+<ul class="w3-navbar">
+  <li><a href="javascript:void(0)" onclick="openCity('London')">London</a></li>
+  <li><a href="javascript:void(0)" onclick="openCity('Paris')">Paris</a></li>
+  <li><a href="javascript:void(0)" onclick="openCity('Tokyo')">Tokyo</a></li>
+</ul>
