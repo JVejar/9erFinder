@@ -1,0 +1,17 @@
+{
+  "name": "ninerfinder",
+  "description": "ninerfinder",
+  "main": "server.js",
+  "authors": [
+    "ITCS 4155"
+  ],
+  "license": "ISC",
+  "homepage": "www.ninerfinder.com",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  },
+  "install":{
+    "path": "client/libs"
+  }
+}
