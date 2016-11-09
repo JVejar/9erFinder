@@ -5,6 +5,11 @@ body{
 	background-color: #31824c;
 }
 
+.right {
+    text-align: right;
+    float: right;
+}
+
 h1{
 	color: white;
 	font-family: georgia, serif;
@@ -35,16 +40,16 @@ pagetitle{
 	color: white;
 	font-family: georgia, serif;
 	text-align: center;
-	text-shadow: 3px 4px black;
 	font-size: 30px;
-	background-color: #0c5622;
-	border-bottom-style: solid;
-	border-bottom-color: black;
+	/*background-color: #0c5622;*/
+	/*border-bottom-style: solid;*/
+	/*border-bottom-color: black;*/
 	margin: 0px;
 }
 
 a {
   text-decoration: none;
+  color: white;
   
 }
 
@@ -64,6 +69,7 @@ h3{
 	color:white;
 }
 
+
 nomargin{
 	margin: 0px;
 }
@@ -81,7 +87,7 @@ table{
 	/*margin-top: 0px;*/
 	margin-left: auto;
 	margin-right: auto;
-	top: -5px;
+	top: 0px;
 	position: relative;
 	width: 100%;
 	max-width: 450px;
@@ -120,6 +126,8 @@ th{
 
 table{
 	background: rgba(49,130,76,0.75);
+	top: -200px;
+	width: 90%;
 }
 
 
@@ -169,8 +177,13 @@ table{
 	height:208px;
 }
 
-<ul class="w3-navbar">
-  <li><a href="javascript:void(0)" onclick="openCity('London')">London</a></li>
-  <li><a href="javascript:void(0)" onclick="openCity('Paris')">Paris</a></li>
-  <li><a href="javascript:void(0)" onclick="openCity('Tokyo')">Tokyo</a></li>
-</ul>
+
+iframe{
+
+	
+}
+
+
+#mapView{
+	position:absolute;
+}

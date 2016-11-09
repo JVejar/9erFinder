@@ -3,6 +3,7 @@
 <head>
 	<title>Create Account</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="ninerScripts.js"></script>
 </head>
 <body>
 
@@ -10,44 +11,50 @@
 	<banner><center><img src="background.jpeg" width="auto" ></center></banner>
 	
 	
-  <table cellpadding="0px" cellspacing="40px">
+	<table cellpadding="0px" cellspacing="40px">
 	<form  action="user_logon.php" onsubmit="if(document.getElementById('agree').checked) {return true;} else {alert('Pleaase read and agree to the Terms and Conditions before continuing'); return false;}">
-		<th colspan="2" bgcolor="#0c5622"><center><pagetitle>Create Account</pagetitle></center></th>
+		<th colspan="2" bgcolor="#0c5622"><center><pagetitle>Create Event</pagetitle></center></th>
 	
 		<tr>
-			<th align="left" >First Name:</th>
+			<th align="left" >Name:</th>
 		    <td>
-		    	<input type="text" name="first_name" placeholder="First Name" value = "" required 
-		    	<!--oninvalid="alert('First Name Field Mising');" -->
+		    	<input type="text" name="name" placeholder="Name" value = "" required 
+		    	<!--oninvalid="alert('Name Field Mising');" -->
 		    	<!--oninput="setCustomValidity('')" >-->
 	    	</td>
 		</tr>
 		<tr>
-			<th align="left">Last Name:</th>
+			<th align="left">Event Name:</th>
 		    <td>
-		    	<input type="text" name="last_name" placeholder="Last Name" value = "" required 
-	    		<!--oninvalid="alert('Last Name Field Mising');" -->
+		    	<input type="text" name="event_name" placeholder="Event Name" value = "" required 
+	    		<!--oninvalid="alert('Event Name Field Mising');" -->
 		    	<!--oninput="setCustomValidity('')" >-->
 	    	</td>
 		</tr>
 		
-		<tr><th align="left">UNCC Email:</th>
-		    <td><input type="email" name="uncc_email" placeholder="UNCC Email" value = "" required ></td>
+		<tr><th align="left">Time:</th>
+		    <td><input type="text" name="time" placeholder="Time" value = "" required 
+		    	<!--oninvalid="alert('Time Field Mising');" -->
+		    	<!--oninput="setCustomValidity('')" >-->
+		    </td>
 		</tr>
 		<tr>
-			<th align="left">Password:</th>
-		    <td><input type="password" name="password" placeholder="Password" value = "" required ></td>
+			<th align="left">Place:</th>
+		    <td><input type="text" name="place" placeholder="Place" value = "" required 
+		    <!--oninvalid="alert('Place Field Mising');" -->
+		    </td>
 		</tr>
 		<tr>
-		    <th align="left">Re-enter Password:</th>
-		    <td><input type="password" name="verify_password" placeholder="Re-enter Password" value = "" required ></td>
+		    <th align="left">Contact info:</th>
+		    <td><input type="text" name="contact" placeholder="Contact info" value = "" required ></td>
 		</tr>
 		
 		
-		<th><input type="checkbox" name="checkbox" value="check" id="agree"  /> I have read and agreed to the Terms &amp; Conditions Privacy Policy</th>
+		
 		<td><a href="profile.html"><input type="submit" name="submit" value="Submit"></a></td>
+	</table>
 	</form>
-  </table>
+
  	<!--action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data"-->
 	<!--<form>-->
 	<!--	<img src="captcha.php" />-->

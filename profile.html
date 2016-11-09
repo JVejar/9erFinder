@@ -6,33 +6,43 @@
 <HTML>
     <head>
         <link href="style.css" type="text/css" rel="stylesheet" />
-        <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+
+</script>
+<script>
+var name = sessionStorage.getItem('name');
+window.alert(name);
+</script>
     </head>
     <body> 
-    <h1><img src="logo.png" height="45"> Niner Finder</h1>
-    <h1>  My Profile </h1>
-    <div id="London" class="city">
-  <h2>London</h2>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="city">
-  <h2>Paris</h2>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="Tokyo" class="city">
-  <h2>Tokyo</h2>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
+	<h2><a href="home.html"><img src="logo.png" height="45"> Niner Finder</a></h1>
 	<banner><center><img src="background.jpeg" width="auto"></center></banner>
-    <center>
-     <img src="avatar.png" alt="My Avatar" style="width:130px;height:130px;">
-    </center>
-    <h2> John Doe</h2>
-    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Use my location</label><br>
-    <label><input type="checkbox" id="cbox2" value="first_checkbox"> Show as online</label><br>
-      <button type="button">Save data</button>
+        
+    <table>
+        <tr>
+            <td colspan=4>
+                <pagetitle> Welcome msalad </pagetitle>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="avatar.png" alt="My Avatar" style="width:130px;height:130px;">                
+            </td>
+            <td>
+                <h3><a>Edit Profile</a></h3>
+                <h3><a href="friends.html">My Friends</a></h3>
+                <h3><a href="events.html" method="my_events">My Events</a></h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Use my location</label><br>
+                <label><input type="checkbox" id="cbox2" value="first_checkbox"> Show as online</label><br>
+                <button type="button">Save data</button>
+            </td>
+        </tr>
+    </table>
+        
     </body>
 </HTML>
 </DOCTYPE>

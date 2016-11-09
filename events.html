@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create an Event</title>
+	<title>Events</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h1><a href="home.html"><img src="logo.png" height="45"> Niner Finder</a></h1>
-	<banner><center><img src="background.jpeg" width="auto"></center></banner>
-
-<!-- <a href="createEvents.html"> create event</a> -->
-
-
+	<h1><a href="home.html"><img src="logo.png" height="45"></a> Niner Finder</h1>
+	<center><img src="background.jpeg" width="auto"></center>
+  
+  <!--<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">-->
+  <!--<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>-->
+  <!--<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
 
 <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
-<body>
 
-    <h1>Create an event</h1>
- 
 
-  <div data-role="main" class="ui-content">
-    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Make a new event</a>
-
-    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-      <form method="post" action="demoform.asp">
-        <div>
-         
-          <label for="eventname" class="ui-hidden-accessible">event name:</label>
-          <input type="text" name="event" id="eventname" placeholder="event name">
-          <label for="time" class="ui-hidden-accessible">time:</label>
-          <input type="time" name="time" id="time" placeholder="time">
-          <input type="text" name="where" id="where" placeholder="where">
-          <input type="text" name="describtion" id="desc" placeholder="describe the event briefly">
-
-          <input type="submit" data-inline="true" value="submit">
+	<table>
+	  <tr>
+	    <td>
+        <a href="profile.html">Profile</a>
+      </td>
+      <td>
+        <div class="right">
+          <a href="home.html">Home</a>
         </div>
-      </form>
-    </div>
-  </div>
-
-
-
+      </td>
+    </tr>
+		<tr>
+			<th colspan=2><pagetitle>Events</pagetitle></th>
+		</tr>
+		<tr>
+		  <td>
+		    <a><input type="radio" id="cbox1" name="events" value="my_events">My Events
+		    <input type="radio" id="cbox2" name="events" value="all_events" checked="checked">All Events</a>
+		  </td>
+		  <td>
+		    <div class="right"><a href="event_page.html">Create An Event</a></div>
+		  </td>
+		</tr>
+		<tr>
+  	 <!-- <div data-role="main" class="ui-content">-->
+    <!--  <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Make a new event</a>-->
+    <!--  <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">-->
+    <!--    <form method="post" action="demoform.asp">-->
+    <!--      <div>-->
+    <!--        <label for="eventname" class="ui-hidden-accessible">Vvent Name:</label>-->
+    <!--        <input type="text" name="event" id="eventname" placeholder="Event name">-->
+    <!--        <label for="time" class="ui-hidden-accessible">time:</label>-->
+    <!--        <input type="date" name="date" id="date" placeholder="date" required>-->
+    <!--        <input type="time" name="time" id="time" placeholder="time" required>-->
+    <!--        <input type="text" name="where" id="where" placeholder="where" required>-->
+    <!--        <input type="text" name="describtion" id="desc" placeholder="event description" required>-->
+    <!--        <input type="submit" name="submit" value="Submit">-->
+    <!--      </div>-->
+    <!--    </form>-->
+    <!--  </div>-->
+    <!--</div>-->
+	</tr>
+	</table>
+  
 	</body>
 </html>

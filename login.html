@@ -1,0 +1,76 @@
+<!--#DatabaseGod-->
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>    
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAOLjx1vC8lOtWZopIaslI7Bfz1xTINlbE",
+    authDomain: "fir-tut-df4ee.firebaseapp.com",
+    databaseURL: "https://fir-tut-df4ee.firebaseio.com",
+    storageBucket: "fir-tut-df4ee.appspot.com",
+    messagingSenderId: "186990510180"
+  };
+  firebase.initializeApp(config);
+  var rootRef = firebase.database();
+  var email; //We will store email here after authentication
+
+//FUnction to login to firebase and check username and password
+function login(username, password, callback) {
+  firebase.database().ref('users/').on('value', function (root) {
+    var users = root.val() //Store all the users in the variable
+    for (var i in users) { //LOop through the users
+      var user = users[i] //Set each user into user[i]
+      if(user.username == username && user.password == password){ //if the password and usernam matches return the callback to true+
+      email = user.email
+      if(success){
+         
+  sessionStorage.setItem('name', email)
+  }
+        return;
+      }
+    }
+    callback(false)
+  })
+}
+
+// writeUserData("01","test","msalad","@");
+// writeUserData("00","test","jvejar","@");
+// writeUserData("02","test","eyang","@");
+
+
+</script>
+<script>
+function run(){
+     
+login($("#loginN").val(), $("#passwordN").val(), function (success) {
+  //console.log(success)
+  window.alert("shipoopi");
+  
+})
+}
+</script>
+<form action="profile.html">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" id = "loginN"required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id = "passwordN" required>
+
+    <button   onclick="run()"  type="submit">Login</button>
+    <input type="checkbox" checked="checked" > Remember me
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
