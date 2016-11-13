@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Create Account</title>
+	<title>Create Event</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="ninerScripts.js"></script>
 </head>
@@ -16,24 +16,24 @@
 		<th colspan="2" bgcolor="#0c5622"><center><pagetitle>Create Event</pagetitle></center></th>
 	
 		<tr>
-			<th align="left" >Name:</th>
+			<th align="left" >Event Name:</th>
 		    <td>
-		    	<input type="text" name="name" placeholder="Name" value = "" required 
-		    	<!--oninvalid="alert('Name Field Mising');" -->
-		    	<!--oninput="setCustomValidity('')" >-->
+		    	<input type="text" name="event_name" placeholder="Event Name" maxlength="40" value = "" required 
+		    	oninvalid="alert('Name Field Mising');">
+		    	<!--oninput="setCustomValidity('Name Field Missing')" >-->
 	    	</td>
 		</tr>
 		<tr>
-			<th align="left">Event Name:</th>
+			<th align="left">Event Date:</th>
 		    <td>
-		    	<input type="text" name="event_name" placeholder="Event Name" value = "" required 
-	    		<!--oninvalid="alert('Event Name Field Mising');" -->
+		    	<input type="date" name="event_date" placeholder="Event Date" value = "" required 
+	    		oninvalid="alert('Event Date Field Mising');">
 		    	<!--oninput="setCustomValidity('')" >-->
 	    	</td>
 		</tr>
-		
+	
 		<tr><th align="left">Time:</th>
-		    <td><input type="text" name="time" placeholder="Time" value = "" required 
+		    <td><input type="time" name="Time" placeholder="Time" value = "" required 
 		    	<!--oninvalid="alert('Time Field Mising');" -->
 		    	<!--oninput="setCustomValidity('')" >-->
 		    </td>
@@ -44,16 +44,28 @@
 		    <!--oninvalid="alert('Place Field Mising');" -->
 		    </td>
 		</tr>
+		
 		<tr>
 		    <th align="left">Contact info:</th>
-		    <td><input type="text" name="contact" placeholder="Contact info" value = "" required ></td>
+		     <td>
+		    	<textarea rows="3" cols="35" placeholder="Contact Information Here" maxlength="150" value = "" required 
+		    	oninvalid="alert('Contact Info Field Missing');"></textarea>
+		    </td>
+		    <!--<td><input type="text" name="contact" placeholder="Contact info" maxlength="40" value = "" required ></td>-->
 		</tr>
 		
-		
-		
+		<tr>
+		    <th align="left">Details:</th>
+		    <td>
+		    	<textarea rows="4" cols="50" placeholder="Event Description Here" maxlength="200"></textarea>
+		    </td>
+		</tr>
+	
 		<td><a href="profile.html"><input type="submit" name="submit" value="Submit"></a></td>
 	</table>
 	</form>
+
+      
 
  	<!--action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data"-->
 	<!--<form>-->

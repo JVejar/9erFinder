@@ -1,109 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	<title>Create Account</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<script src="ninerScripts.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>    
-	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script>
-		// Initialize Firebase
-		var config = {
-	    apiKey: "AIzaSyAOLjx1vC8lOtWZopIaslI7Bfz1xTINlbE",
-	    authDomain: "fir-tut-df4ee.firebaseapp.com",
-	    databaseURL: "https://fir-tut-df4ee.firebaseio.com",
-	    storageBucket: "fir-tut-df4ee.appspot.com",
-	    messagingSenderId: "186990510180"
-		};
-		firebase.initializeApp(config);
-		var rootRef = firebase.database();
-	  
-		//Write User Data, for storing information. accept a username, password, name and email
-		function writeUserData(userId, password, name, email) {
-		//Firebase function to add details to database
-		firebase.database().ref('users/' + userId).set({
-	    username : name,
-	    password : password,
-	    email : email
-		});
-		}
-	</script>
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>    
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script> 
 	
-	<script>
-		function send() {
-			//$('#email')
-			//Works
-			//alert($('#password').val())
-			//console.log($('#password').val())
-			writeUserData("05",$('#password').val(),$('#email').val(),$('#fName').val());
-			//Now sending to firebase
-			
-		}
+	 var config = {
+    apiKey: "AIzaSyAOLjx1vC8lOtWZopIaslI7Bfz1xTINlbE",
+    authDomain: "fir-tut-df4ee.firebaseapp.com",
+    databaseURL: "https://fir-tut-df4ee.firebaseio.com",
+    storageBucket: "fir-tut-df4ee.appspot.com",
+    messagingSenderId: "186990510180"
+  };
+  firebase.initializeApp(config);
+  var rootRef = firebase.database();
+  
+	//Add user to the database
+	function writeUserData(userID) {
+  firebase.database().ref('users/' + userID).set({
+    username : document.getElementById("name").value,
+    password : document.getElementById("password").value,
+    email : document.getElementById("email").value
+  });
+ // alert(userID);
+}
+//Works
+//function test(){
+//	alert(document.getElementById("name").value);
+//}
 	</script>
-	
 </head>
 <body>
+
 	<h2><a href="home.html"><img src="logo.png" height="45"> Niner Finder</a></h1>
 	<banner><center><img src="background.jpeg" width="auto" ></center></banner>
 	
+	
 	<table cellpadding="0px" cellspacing="40px">
-		<form onSubmit="submit" id='register' action="profile.html" method='post' accept-charset='UTF-8'>
-			<fieldset>
-				<th colspan="2" bgcolor="#0c5622"><center><pagetitle><legend>Register</legend></pagetitle></center></th>
-				<input type='hidden' name='submitted' id='submitted' value='1'/>
-				<tr>
-					<th align="left" >First Name:</th>
-				    <td>
-				    	<input type="text" name="first_name" placeholder="First Name" value = "" id = "fName"required 
-				    	<!--oninvalid="alert('First Name Field Mising');" -->
-				    	<!--oninput="setCustomValidity('')" >-->
-			    	</td>
-				</tr>
-				<tr>
-					<th align="left">Last Name:</th>
-				    <td>
-				    	<input type="text" name="last_name" placeholder="Last Name" value = "" required 
-			    		<!--oninvalid="alert('Last Name Field Mising');" -->
-				    	<!--oninput="setCustomValidity('')" >-->
-			    	</td>
-				</tr>
-				
-				<script>
-					
-				</script>
-				
-				<tr><th align="left">UNCC Email:</th>
-				    <td><input id="email" type="email" name="uncc_email" placeholder="UNCC Email" value = "" required ></td>
-				</tr>
-				<tr>
-					<th align="left">Password:</th>
-				    <td><input type="password" name="password" placeholder="Password" value = "" required id = "password"></td>
-				</tr>
-				<tr>
-				    <th align="left">Re-enter Password:</th>
-				    <td><input type="password" name="verify_password" placeholder="Re-enter Passord" value = "" required ></td>
-				</tr>
-				
-				
-				<th><input type="checkbox" name="checkbox" value="check" id="agree" required /> I have read and agreed to the Terms &amp; Conditions Privacy Policy</th>
-				<td><a href="profile.html"><input type="submit" name="submit" value="Submit" onclick="return send();"   ></a></td>
-			</fieldset>
+		<form  onsubmit="writeUserData(77)" action="home.html" >
+			<th colspan="2" bgcolor="#0c5622"><center><pagetitle>Create Account</pagetitle></center></th>
+		
+			<tr>
+				<th align="left" >First Name:</th>
+			    <td>
+			    	<input type="text" name="first_name" placeholder="First Name" value = ""   id ="name"
+			    	<!--oninvalid="alert('First Name Field Mising');" -->
+			    	<!--oninput="setCustomValidity('')" >-->
+		    	</td>
+			</tr>
+			<tr>
+				<th align="left">Last Name:</th>
+			    <td>
+			    	<input type="text" name="last_name" placeholder="Last Name" value = "" 
+		    		<!--oninvalid="alert('Last Name Field Mising');" -->
+			    	<!--oninput="setCustomValidity('')" >-->
+		    	</td>
+			</tr>
+			
+			<tr><th align="left">UNCC Email:</th>
+			    <td><input type="email" name="uncc_email" placeholder="UNCC Email" value = ""  id = "email" ></td>
+			</tr>
+			<tr>
+				<th align="left">Password:</th>
+			    <td><input type="password" name="password" placeholder="Password" value = ""  id = "password" ></td>
+			</tr>
+			<tr>
+			    <th align="left">Re-enter Password:</th>
+			    <td><input type="password" name="verify_password" placeholder="Re-enter Password" value = "" ></td>
+			</tr>
+			
+			
+			<th><input type="checkbox" name="checkbox" value="check" id="agree"  /> I have read and agreed to the Terms &amp; Conditions Privacy Policy</th>
+			
+			
+			<td><a href="profile.html"><input type="submit" name="submit" value="Submit" ></a></td>
 		</form>
 	</table>
+  
+  
+  
+  
+  
+  
 
-
- 	<!--action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data"-->
-	<!--<form>-->
-	<!--	<img src="captcha.php" />-->
-	<!--	<p><input name="captcha" type="text" id="captcha" size="15" /> <br /></p>-->
-	<!--	<input type="submit" name="submit" value="submit" />-->
-	<!--	<input type ="reset" name="reset" value="clear"/>-->
-	<!--</form>-->
 	</body>
 </html>
 

@@ -3,28 +3,35 @@
 <head>
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<!--START: This is for the Google Maps Style-->
+	<meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+    	#map{height: 500px;width: 594px;}
+    </style>
+    <!--END-->
+	
 </head>
 <body>
 	<h1><a href="home.html"><img src="logo.png" height="45"></a> Niner Finder</h1>
 	<center><img src="background.jpeg" width="auto"></center>
 	
-	
+	<!--START: This is the PROFILE NAVIGATION-->
     <div id="logonNav" class="sidenav">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <img src="logo.png" margin="10px">
 	  <a href="#">Login</a>
-	  <form action="profile.html">
-		<input type="text" name="username" placeholder="Username">
+	  <form  onsubmit="login()" action="profile.html">
+		<input type="text" name="username" placeholder="Username" id ="name">
 		<br/>
-		<input type="password" name="password" placeholder="Password">
+		<input type="password" name="password" placeholder="Password" id ="password">
 		<br/>
 		<input type="submit" value="Submit">
-
 		</form>	
 	  <a href="createAccount.html" >Not register?  Sign up now!</a>
 	</div>
-	
-	
+	<!--if already logged on-->
 	<div id="profileNav" class="sidenav">
 	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 	  <img src="logo.png" margin="10px">
@@ -33,8 +40,7 @@
 	  <a href="events.html" >My Events</a>
 	  <a href="friends.html">My Friends</a>
 	</div>
-	
-	
+	<!--Javascript functions for PROFILE NAVIGATION-->
 	<script>
 	function openNav() {
 		logon=false;
@@ -47,93 +53,68 @@
 	function closeNav() {
 	    document.getElementById("profileNav").style.width = "0";}
 	</script>
-	
-	<table>
-		<tr>
-			<th><a href="events.html">Events</a></th>
-			<th>
-				<form action="profile.html"> 
-			    	<input type="text" name="search" placeholder="Search Places">
-			    	<input type="submit" value="Submit">
-				</form>	
-			</th>
-			<th style="cursor:pointer" onclick="openNav()">Profile</th>
-		</tr>
-		<tr >
-			<th colspan="3" id = "mapView">
-				<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1V64krY_xtrVuWH8ckfpS2oQGWDc&ll=35.30722596679945%2C-80.73594876365769&z=15" width="200%" height="500" style="float:middle">
-			</th
-		</tr>
-	</table>
 
-</body>
-</html><!DOCTYPE html>
-<html>
-<head>
-	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<h1><a href="home.html"><img src="logo.png" height="45"></a> Niner Finder</h1>
-	<center><img src="background.jpeg" width="auto"></center>
-	
-	
-    <div id="logonNav" class="sidenav">
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <img src="logo.png" margin="10px">
-	  <a href="#">Login</a>
-	  <form action="profile.html">
-		<input type="text" name="username" placeholder="Username">
-		<br/>
-		<input type="password" name="password" placeholder="Password">
-		<br/>
-		<input type="submit" value="Submit">
-
-		</form>	
-	  <a href="createAccount.html" >Not register?  Sign up now!</a>
-	</div>
-	
-	
-	<div id="profileNav" class="sidenav">
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <img src="logo.png" margin="10px">
-	  <h3>Welcome back NAME!</h3>
-	  <a href="profile.html" >My Profile</a>
-	  <a href="events.html" >My Events</a>
-	  <a href="friends.html">My Friends</a>
-	</div>
-	
-	
+	<!--END-->
+	<!-- Function to authenticate the user -->	
 	<script>
-	function openNav() {
-		logon=true;
-		if (logon==false)
-	    document.getElementById("logonNav").style.width = "250px";
-		else{
-	    document.getElementById("profileNav").style.width = "250px";
-		}
-	}
-	function closeNav() {
-	    document.getElementById("profileNav").style.width = "0";}
+
+  //Function to login to firebase and check username and password
+function login() {
+  firebase.database().ref('users/').on('value', function (root) {
+    var users = root.val() //Store all the users in the variable
+    for (var i in users) { //LOop through the users
+      var user = users[i] //Set each user into user[i]
+      if(user.username == document.getElementById("name").value && user.password == document.getElementById("password").value){ //if the password and usernam matches return the callback to true
+      alert("works");
+        return;
+      }
+    }
+    alert("false");
+    callback(false)
+  })
+}
 	</script>
 	
+	
+	<!--This is the MAIN TABLE-->
 	<table>
 		<tr>
 			<th><a href="events.html">Events</a></th>
-			<th>
-				<form action="profile.html"> 
-			    	<input type="text" name="search" placeholder="Search Places">
-			    	<input type="submit" value="Submit">
-				</form>	
+			<th><a>Check-In</a>
 			</th>
 			<th style="cursor:pointer" onclick="openNav()">Profile</th>
 		</tr>
 		<tr >
 			<th colspan="3" id = "mapView">
-				<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1V64krY_xtrVuWH8ckfpS2oQGWDc&ll=35.30722596679945%2C-80.73594876365769&z=15" width="200%" height="500" style="float:middle">
+				<!--<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1V64krY_xtrVuWH8ckfpS2oQGWDc&ll=35.30722596679945%2C-80.73594876365769&z=15" width="200%" height="500" style="float:middle">-->
+			    <div id="map"></div>
+			    
+			    <!--START: Google MAPS API Currently WORKING-->
+			    <script>
+			      var map;
+			      function initMap() {
+			        map = new google.maps.Map(document.getElementById('map'), {
+			          center: {lat: 35.3079111, lng: -80.7353497},
+			          scrollwheel: false,
+			          zoom: 15,
+			          minZoom: 15 //KC: Keeps map from zooming out too far.
+			        });
+                	var ctaLayer = new google.maps.KmlLayer({
+			          //url: 'https://www.dropbox.com/s/6fta9ojjt4viqu7/UNC%20Charlotte.kml?dl=0',
+			          url: 'https://sites.google.com/a/uncc.edu/mykmlfiles/uncckml/UNC%20Charlotte.kml',
+			          map: map
+			        });
+			      }
+			    </script>
+			    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIytyM75ZixwHp5XSVZanW10ZWZ_BxICA&callback=initMap"
+			    async defer></script>
+			    <!--END-->
+			    
 			</th
 		</tr>
 	</table>
 
+
+
+
 </body>
-</html>

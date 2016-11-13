@@ -1,4 +1,6 @@
 <!--#DatabaseGod-->
+<!DOCTYPE html>
+<html>
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>    
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
@@ -20,16 +22,22 @@
 
 //FUnction to login to firebase and check username and password
 function login(username, password, callback) {
+  //username is being passed in
+  
+  
   firebase.database().ref('users/').on('value', function (root) {
     var users = root.val() //Store all the users in the variable
+    console.log(users);
     for (var i in users) { //LOop through the users
       var user = users[i] //Set each user into user[i]
       if(user.username == username && user.password == password){ //if the password and usernam matches return the callback to true+
       email = user.email
-      if(success){
+     // if(success){
          
-  sessionStorage.setItem('name', email)
-  }
+ 
+  //}
+   sessionStorage.setItem('name', email)
+  alert(username);
         return;
       }
     }
@@ -45,15 +53,16 @@ function login(username, password, callback) {
 </script>
 <script>
 function run(){
-     
+  //Run is being called
+     //alert("test")
 login($("#loginN").val(), $("#passwordN").val(), function (success) {
   //console.log(success)
-  window.alert("shipoopi");
+ //alert("shipoopi");
   
 })
 }
 </script>
-<form action="profile.html">
+<form >
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
@@ -74,3 +83,4 @@ login($("#loginN").val(), $("#passwordN").val(), function (success) {
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
+</html>
