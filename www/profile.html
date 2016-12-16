@@ -1,0 +1,87 @@
+<DOCTYPE! HTML>
+    <!--
+    Connect to database, pull indivdual profiles
+    
+    !-->
+<HTML>
+    <head>
+        <link href="style.css" type="text/css" rel="stylesheet" />
+
+
+</script>
+<script>
+//var name = sessionStorage.getItem('name');
+//window.alert(name);
+</script>
+</head>
+<body>
+    <script>
+        var user = firebase.auth().currentUser;
+        var first_name, last_name, email, uid;
+        if (user!=null) {
+          first_name= user.first_name;
+          email=user.email;
+          uid=user.uid;
+          // User is signed in.
+        } else {
+          // No user is signed in.
+        }
+    </script>
+     
+	<h1><a href="home.html"><img src="logo.png" height="45"> Niner Finder</a></h1>
+	<banner><center><img src="background.jpeg" width="auto"></center></banner>
+        
+    <table>
+        <tr>
+            <td colspan=4>
+                <pagetitle>
+                <script>
+        		document.write(sessionStorage.getItem("user"));
+        		</script> 
+        		<script>
+        		document.write(sessionStorage.getItem("lastName"));
+        		</script>
+                </pagetitle>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="user.png" alt="My Avatar" style="width:130px;height:130px;">                
+            </td>
+            <td>
+                <h3>Last check-in:</h3>
+                
+                <h3>Contact information</h3>
+                <script>
+		            document.write(sessionStorage.getItem("email"));
+		        </script> 
+                <h3>About Me</h3>
+                
+                
+                <form action="none">
+                <textarea name="myTextBox" cols="50" rows="5">
+                Enter some text...
+                </textarea>
+                <br />
+                <input type="submit" />
+                </form>
+
+                <h3>Organization</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Use my location</label><br>
+                <label><input type="checkbox" id="cbox2" value="first_checkbox"> Show as online</label><br>
+                <button type="button">Save data</button>
+                
+                <h4><a>Edit Profile</a></h4>
+                <h4><a href="friends.html">My Friends</a></h4>
+                <h4><a href="events.html" method="my_events">My Events</a></h4>
+            </td>
+        </tr>
+    </table>
+        
+    </body>
+</HTML>
+</DOCTYPE>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>    
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 
+	
+	
+	  
+<!--	 // var eventID = firebase.auth().currentUser.uid;-->
+<!--	  //return firebase.database().rootRef('/events/' + eventID).once('value').then(function(snapshot){-->
+<!--	  	//var event_name = snapshot.val().event_name;-->
+<!--	  //});-->
+	  
+<!--	  //Function to login to firebase and check eventname and password-->
+	  
+<!--// populateEvents();	  -->
+	  
+<!--// 	  //HERE IS SOMETHING THAT i FOUND THAT MIGHT HELP-->
+<!--// 	  //https://www.airpair.com/firebase/posts/firebase-building-realtime-app-->
+<!--// function populateEvents() {-->
+<!--//   firebase.database().ref('events/').on('value', function (root) {-->
+<!--//     var events = root.val() //Store all the events in the variable-->
+<!--//     for (var i in events) { //LOop through the events-->
+<!--//       var event = events[i] //Set each event into event[i]-->
+<!--//       eventNames[i] = event;-->
+<!--//       document.getElementById('sum').value = 'sddd';//eventNames[i].event_name;-->
+<!--//       //$('#sum').attr('value','dd');-->
+<!--//       console.log(document.getElementById("sum").value);-->
+      
+<!--//      //setText("h4","ddd");-->
+<!--//       console.log(event);-->
+<!--//     }-->
+<!--//   // callback(false)-->
+<!--//   })-->
+<!--// }-->
+
+</head>
+<body>
+	<h1><a href="home.html"><img src="logo.png" height="45"></a> Niner Finder</h1>
+	<center><img src="background.jpeg" width="auto"></center>
+	<!--<h2 id="sum" value = "dd"> Stuffs </h2>-->
+	<table>
+	  <tr>
+	    <td>
+        <a href="profile.html">Profile</a>
+      </td>
+      <td>
+        <div class="right">
+          <a href="home.html">Home</a>
+        </div>
+      </td>
+    </tr>
+		<tr>
+			<th colspan=2><pagetitle>Events</pagetitle></th>
+		</tr>
+		<tr>
+		  <td>
+		    <a><input type="radio" id="cbox1" name="events" value="my_events">My Events
+		    <input type="radio" id="cbox2" name="events" value="all_events" checked="checked">All Events</a>
+		  </td>
+		  <td>
+		    <div class="right"><a href="event_page.html">Create An Event</a></div>
+		  </td>
+		</tr>
+		<tr>
+	    <td>
+	      
+	    </td>
+	  </tr>
+	</table>
+	
+	<div class="mainDiv" align="left">
+    <h4>All Events</h4>
+    <table class="table1">
+      <thead>
+        <tr>
+          <td><th1>Name</th1></td>
+          <td><th1>Date</th1></td>
+          <td><th1>Time</th1></td>
+          <td><th1>Place</th1></td>
+        </tr>
+      </thead>
+      <tbody id="table_body">
+
+      </tbody>
+    </table>
+  </div>
+  
+  
+  
+  <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>-->
+    <script>
+      // Initialize Firebase 
+      var config = {
+        apiKey: "AIzaSyAOLjx1vC8lOtWZopIaslI7Bfz1xTINlbE",
+	    authDomain: "fir-tut-df4ee.firebaseapp.com",
+	    databaseURL: "https://fir-tut-df4ee.firebaseio.com",
+	    storageBucket: "fir-tut-df4ee.appspot.com",
+	    messagingSenderId: "186990510180"
+      };
+      firebase.initializeApp(config);
+    </script>
+    
+    
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  
+  <script src="index.js"></script>
+	
+	
+	</body>
+</html>

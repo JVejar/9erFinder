@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<!--START: This is for the Google Maps Style-->
+	<meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+    	#map{height: 500px; width: 600px;}
+    </style>
+    <!--END-->
+	
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>    
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script> 
+	
+	var config = {
+	    apiKey: "AIzaSyAOLjx1vC8lOtWZopIaslI7Bfz1xTINlbE",
+	    authDomain: "fir-tut-df4ee.firebaseapp.com",
+	    databaseURL: "https://fir-tut-df4ee.firebaseio.com",
+	    storageBucket: "fir-tut-df4ee.appspot.com",
+	    messagingSenderId: "186990510180"
+	 };
+	 firebase.initializeApp(config);
+	 var rootRef = firebase.database();
+	</script>
+	
+	
+</head>
+<body>
+	<h1><a href="home.html"><img src="logo.png" height="45"></a> Niner Finder</h1>
+	<center><img src="background.jpeg" width="auto"></center>
+	
+	<!--START: This is the PROFILE NAVIGATION-->
+    <div id="logonNav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <img src="logo.png" margin="10px">
+	  <a href="#">Login</a>
+	  <form  onsubmit="login()" action="home.html">
+		<input type="text" name="username" placeholder="Username" id ="name">
+		<br/>
+		<input type="password" name="password" placeholder="Password" id ="password">
+		<br/>
+		<input type="submit" value="Submit">
+		</form>	
+	  <a href="createAccount.html" >Not register?  Sign up now!</a>
+	</div>
+	<!--if already logged on-->
+	<div id="profileNav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <img src="logo.png" margin="10px">
+	  <h3>Welcome Back 
+		<script>
+		document.write(sessionStorage.getItem("user"));
+		</script> 
+		<script>
+		document.write(sessionStorage.getItem("lastName"));
+		</script>
+		!</h3> 
+	  
+	  <a href="profile.html" >My Profile</a>
+	  <a href="events.html" >My Events</a>
+	  <a href="friends.html">My Friends</a>
+	  <a href="home.html" onclick="logout()">Logout</a>
+	</div>
+	
+	
+	
+	
+	<script>
+	
+	//clears out any user information and sets logon to false incase any method calls 
+	//the sessionStorage for "logon"
+	function logout(){
+		sessionStorage.clear();
+		sessionStorage.setItem("logon", "false");
+	}
+	
+	// Javascript functions for PROFILE NAVIGATION	
+	function openNav() {
+		//stores if someone is logged in or not
+		var logged = sessionStorage.getItem("logon");
+		var logon = false;
+		if (logged==="true")
+			logon = true;
+
+		if (logon==false)
+	    	document.getElementById("logonNav").style.width = "250px";
+		else
+	    	document.getElementById("profileNav").style.width = "250px";
+	}
+	function closeNav() {
+		//stores if someone is logged in or not
+		var logged = sessionStorage.getItem("logon");
+		var logon = false;
+		if (logged==="true")
+			logon = true;
+			
+		if (logon==false)
+	    	document.getElementById("logonNav").style.width = "0";
+	    else
+	    	document.getElementById("profileNav").style.width = "0";
+	}
+
+	//Function to login to firebase and check username and password
+	function login() {
+	  firebase.database().ref('users/').on('value', function (root) {
+	    var users = root.val();			//Store all the users in the variable
+	    for (var i in users) {			//LOop through the users
+	      var user = users[i];			//Set each user into user[i]
+	      if(user.username == document.getElementById("name").value && user.password == document.getElementById("password").value){ //if the password and usernam matches return the callback to true
+	    	var name = user.first_name;
+	    	var last = user.last_name;
+	    	var mail = user.email;
+	    	sessionStorage.setItem("user", name);
+	    	sessionStorage.setItem("logon", "true");
+	    	sessionStorage.setItem("lastName", last);
+	    	sessionStorage.setItem("email", mail);
+	    	document.getElementById("name").innerHTML = localStorage.getItem("user");
+	    	 alert("Logged in!");
+	        return;
+	      }
+	    }
+	    alert("Incorrect Login!");
+	    callback(false);
+	  })
+	}
+	</script>
+	
+	
+	<!--This is the MAIN TABLE-->
+	<table>
+		<tr>
+			<th><a href="events.html">Events</a></th>
+			<th><a id="check-in">Check-In</a>
+			</th>
+			<th style="cursor:pointer" onclick="openNav()">Profile</th>
+		</tr>
+		<tr >
+			<th colspan="3" id = "mapView">
+				<!--<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1V64krY_xtrVuWH8ckfpS2oQGWDc&ll=35.30722596679945%2C-80.73594876365769&z=15" width="200%" height="500" style="float:middle">-->
+			    <div id="map"></div>
+			    
+			    <!--START: Google MAPS API Currently WORKING-->
+			    <script>
+			      var map;
+			      var src ="https://www.dropbox.com/s/6fta9ojjt4viqu7/UNC%20Charlotte.kml?dl=0";
+			      
+			      function initMap() {
+			        map = new google.maps.Map(document.getElementById('map'), {
+			          center: {lat: 35.3079111, lng: -80.7353497},
+			          scrollwheel: false,
+			          zoom: 15,
+			          minZoom: 15 //KC: Keeps map from zooming out too far.
+			        });
+			        
+			        loadKmlLayer(src, map);
+			        
+			        var infoWindow = new google.maps.InfoWindow({map: map});
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+			      }
+
+			      function loadKmlLayer(src, map) {
+			        var kmlLayer = new google.maps.KmlLayer(src, {
+			          suppressInfoWindows: true,
+			          preserveViewport: false,
+			          map: map
+			        });
+			        google.maps.event.addListener(kmlLayer, 'click', function(event) {
+			          var content = event.featureData.infoWindowHtml;
+			          var testimonial = document.getElementById('capture');
+			          testimonial.innerHTML = content;
+			        });
+			      }
+			      
+			      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+			      
+			      
+			      
+			    </script>
+				<script async defer
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIytyM75ZixwHp5XSVZanW10ZWZ_BxICA&callback=initMap">
+				</script>	
+
+
+			</th
+		</tr>
+	</table>
+
+
+
+
+</body>
