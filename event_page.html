@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Event</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="ninerScripts.js"></script>
+</head>
+<body>
+
+	<h2><a href="home.html"><img src="logo.png" height="45"> Niner Finder</a></h1>
+	<banner><center><img src="background.jpeg" width="auto" ></center></banner>
+	
+	
+	<table cellpadding="0px" cellspacing="40px">
+	<form  action="user_logon.php" onsubmit="if(document.getElementById('agree').checked) {return true;} else {alert('Pleaase read and agree to the Terms and Conditions before continuing'); return false;}">
+		<th colspan="2" bgcolor="#0c5622"><center><pagetitle>Create Event</pagetitle></center></th>
+	
+		<tr>
+			<th align="left" >Event Name:</th>
+		    <td>
+		    	<input type="text" name="event_name" placeholder="Event Name" maxlength="40" value = "" required 
+		    	oninvalid="alert('Name Field Mising');">
+		    	<!--oninput="setCustomValidity('Name Field Missing')" >-->
+	    	</td>
+		</tr>
+		<tr>
+			<th align="left">Event Date:</th>
+		    <td>
+		    	<input type="date" name="event_date" placeholder="Event Date" value = "" required 
+	    		oninvalid="alert('Event Date Field Mising');">
+		    	<!--oninput="setCustomValidity('')" >-->
+	    	</td>
+		</tr>
+	
+		<tr><th align="left">Time:</th>
+		    <td><input type="time" name="Time" placeholder="Time" value = "" required 
+		    	<!--oninvalid="alert('Time Field Mising');" -->
+		    	<!--oninput="setCustomValidity('')" >-->
+		    </td>
+		</tr>
+		<tr>
+			<th align="left">Place:</th>
+		    <td><input type="text" name="place" placeholder="Place" value = "" required 
+		    <!--oninvalid="alert('Place Field Mising');" -->
+		    </td>
+		</tr>
+		
+		<tr>
+		    <th align="left">Contact info:</th>
+		     <td>
+		    	<textarea rows="3" cols="35" placeholder="Contact Information Here" maxlength="150" value = "" required 
+		    	oninvalid="alert('Contact Info Field Missing');"></textarea>
+		    </td>
+		    <!--<td><input type="text" name="contact" placeholder="Contact info" maxlength="40" value = "" required ></td>-->
+		</tr>
+		
+		<tr>
+		    <th align="left">Details:</th>
+		    <td>
+		    	<textarea rows="4" cols="50" placeholder="Event Description Here" maxlength="200"></textarea>
+		    </td>
+		</tr>
+	
+		<td><a href="profile.html"><input type="submit" name="submit" value="Submit"></a></td>
+	</table>
+	</form>
+
+      
+
+ 	<!--action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data"-->
+	<!--<form>-->
+	<!--	<img src="captcha.php" />-->
+	<!--	<p><input name="captcha" type="text" id="captcha" size="15" /> <br /></p>-->
+	<!--	<input type="submit" name="submit" value="submit" />-->
+	<!--	<input type ="reset" name="reset" value="clear"/>-->
+	<!--</form>-->
+	</body>
+</html>
+

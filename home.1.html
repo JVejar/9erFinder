@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1><a href="home.html"><img src="logo.png" height="45"></a> Niner Finder</h1>
+	<center><img src="background.jpeg" width="auto"></center>
+	
+	
+    <div id="logonNav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <img src="logo.png" margin="10px">
+	  <a href="#">Login</a>
+	  <form action="profile.html">
+		<input type="text" name="username" placeholder="Username">
+		<br/>
+		<input type="password" name="password" placeholder="Password">
+		<br/>
+		<input type="submit" value="Submit">
+
+		</form>	
+	  <a href="createAccount.html" >Not register?  Sign up now!</a>
+	</div>
+	
+	
+	<div id="profileNav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <img src="logo.png" margin="10px">
+	  <h3>Welcome back NAME!</h3>
+	  <a href="profile.html" >My Profile</a>
+	  <a href="events.html" >My Events</a>
+	  <a href="friends.html">My Friends</a>
+	</div>
+	
+	
+	<script>
+	function openNav() {
+		logon=false;
+		if (logon==false)
+	    document.getElementById("logonNav").style.width = "250px";
+		else{
+	    document.getElementById("profileNav").style.width = "250px";
+		}
+	}
+	function closeNav() {
+	    document.getElementById("profileNav").style.width = "0";}
+	</script>
+	
+	<table>
+		<tr>
+			<th><a href="events.html">Events</a></th>
+			<th>
+				<form action="profile.html"> 
+			    	<input type="text" name="search" placeholder="Search Places">
+			    	<input type="submit" value="Submit">
+				</form>	
+			</th>
+			<th style="cursor:pointer" onclick="openNav()">Profile</th>
+		</tr>
+		<tr >
+			<th colspan="3" id = "mapView">
+				<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1V64krY_xtrVuWH8ckfpS2oQGWDc&ll=35.30722596679945%2C-80.73594876365769&z=15" width="200%" height="500" style="float:middle">
+			</th
+		</tr>
+	</table>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1><a href="home.html"><img src="logo.png" height="45"></a> Niner Finder</h1>
+	<center><img src="background.jpeg" width="auto"></center>
+	
+	
+    <div id="logonNav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <img src="logo.png" margin="10px">
+	  <a href="#">Login</a>
+	  <form action="profile.html">
+		<input type="text" name="username" placeholder="Username">
+		<br/>
+		<input type="password" name="password" placeholder="Password">
+		<br/>
+		<input type="submit" value="Submit">
+
+		</form>	
+	  <a href="createAccount.html" >Not register?  Sign up now!</a>
+	</div>
+	
+	
+	<div id="profileNav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <img src="logo.png" margin="10px">
+	  <h3>Welcome back NAME!</h3>
+	  <a href="profile.html" >My Profile</a>
+	  <a href="events.html" >My Events</a>
+	  <a href="friends.html">My Friends</a>
+	</div>
+	
+	
+	<script>
+	function openNav() {
+		logon=true;
+		if (logon==false)
+	    document.getElementById("logonNav").style.width = "250px";
+		else{
+	    document.getElementById("profileNav").style.width = "250px";
+		}
+	}
+	function closeNav() {
+	    document.getElementById("profileNav").style.width = "0";}
+	</script>
+	
+	<table>
+		<tr>
+			<th><a href="events.html">Events</a></th>
+			<th>
+				<form action="profile.html"> 
+			    	<input type="text" name="search" placeholder="Search Places">
+			    	<input type="submit" value="Submit">
+				</form>	
+			</th>
+			<th style="cursor:pointer" onclick="openNav()">Profile</th>
+		</tr>
+		<tr >
+			<th colspan="3" id = "mapView">
+				<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1V64krY_xtrVuWH8ckfpS2oQGWDc&ll=35.30722596679945%2C-80.73594876365769&z=15" width="200%" height="500" style="float:middle">
+			</th
+		</tr>
+	</table>
+
+
+
+
+
+
+</body>
+</html>

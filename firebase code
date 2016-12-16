@@ -1,0 +1,63 @@
+#################
+Needs to go in the head of the document
+###############
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-app.js"></script>    
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+<script>
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAOLjx1vC8lOtWZopIaslI7Bfz1xTINlbE",
+    authDomain: "fir-tut-df4ee.firebaseapp.com",
+    databaseURL: "https://fir-tut-df4ee.firebaseio.com",
+    storageBucket: "fir-tut-df4ee.appspot.com",
+    messagingSenderId: "186990510180"
+  };
+  firebase.initializeApp(config);
+  var rootRef = firebase.database();
+  
+  
+  
+  
+  
+  
+############################  
+METHODS do not need to copy all of them
+may need to create more
+  
+###########################
+  
+  
+//Write User Data, for storing information. accept a username, password, name and email
+function writeUserData(userID, password, name, email) {
+/////////////////////////////////////////////////////////////////30
+  //Firebase function to add details to database
+  //change it to our parameters
+  firebase.database().ref('users/' + userID).set({
+    username : name,
+    password : password,
+    email : email
+  });
+}
+
+
+//Function to login to firebase and check username and password
+function login(username, password, callback) {
+  firebase.database().ref('users/').on('value', function (root) {
+    var users = root.val() //Store all the users in the variable
+    for (var i in users) { //LOop through the users
+      var user = users[i] //Set each user into user[i]
+      if(user.username == username && user.password == password){ //if the password and usernam matches return the callback to true
+        return;
+      }
+    }
+    callback(false)
+  })
+}

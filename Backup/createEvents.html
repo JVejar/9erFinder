@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create an Event</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+	<h1><a href="home.html"><img src="logo.png" height="45"></a> Niner Finder</h1>
+	<banner><center><img src="background.jpeg" width="auto"></center></banner>
+
+
+
+<!-- 
+<p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="myFunction()">Event name</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var eventname = prompt("Click below to create an event");
+   
+    
+    if (eventname != null) {
+        document.getElementById("demo").innerHTML =
+        "your event name is: " + eventname + ".are you sure of this event?";
+    }
+}
+</script> -->
+
+
+
+
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+    <h1>Create an event</h1>
+ 
+
+  <div data-role="main" class="ui-content">
+    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Make a new event</a>
+
+    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
+      <form method="post" action="demoform.asp">
+        <div>
+          <h3>Login information</h3>
+          <label for="eventname" class="ui-hidden-accessible">event name:</label>
+          <input type="text" name="event" id="eventname" placeholder="event name">
+          <label for="time" class="ui-hidden-accessible">time:</label>
+          <input type="time" name="time" id="time" placeholder="time">
+          <input type="text" name="where" id="where" placeholder="where">
+          <input type="text" name="describtion" id="desc" placeholder="describe the event briefly">
+
+          <input type="submit" data-inline="true" value="submit">
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+	</body>
+</html>

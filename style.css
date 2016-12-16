@@ -1,0 +1,186 @@
+body{
+	margin:0px;
+	padding:0px;
+	font-family:"Helvetica Neue", Helvetica, Arial;
+	background-color: #31824c;
+}
+
+.right {
+    text-align: right;
+    float: right;
+}
+
+h1{
+	color: white;
+	font-family: georgia, serif;
+	text-align: center;
+	text-shadow: 3px 4px black;
+	font-size: 60px;
+	background-color: #0c5622;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#cbox1{
+	color: white;
+	font-family: georgia, serif;
+	text-align: center;
+	text-shadow: 3px 4px black;
+	font-size: 60px;
+	background-color: #0c5622;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+pagetitle{
+	color: white;
+	font-family: georgia, serif;
+	text-align: center;
+	font-size: 30px;
+	/*background-color: #0c5622;*/
+	/*border-bottom-style: solid;*/
+	/*border-bottom-color: black;*/
+	margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  
+}
+
+h2{
+	color: white;
+	font-family: georgia, serif;
+	text-align: center;
+	text-shadow: 3px 4px black;
+	font-size: 60px;
+	background-color: #0c5622;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+h3{
+	color:white;
+}
+
+
+nomargin{
+	margin: 0px;
+}
+
+form{
+	text-align: center;
+}
+
+iframe{
+	margin-right: auto;
+	margin-left: auto;
+}
+
+table{
+	margin-top: -200px;
+	margin-left: auto;
+	margin-right: auto;
+	top: 0px;
+	position: relative;
+	width: 600px;
+	/*max-width: 800px;*/
+	background-color: #31824c;
+	
+}
+
+#t01{
+	top: 0px;
+	width: auto;
+}
+
+#f01{
+	padding-top: 0px;
+	bottom: 5px;
+	width: 100%;
+	left: 0px;
+	height: 80px;
+	color: white;
+	font-family: georgia;
+	
+}
+
+fieldset {
+    border: 1px dotted #61B5CF;
+    margin: 0ex;
+    padding: 0.6em;
+    float:none;
+    width:40%;
+}
+
+th{
+	margin-top: 0px;
+	color:white;
+	font-family: georgia;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#test{
+	width:254px;
+	height:208px;
+}
+
+
+iframe{
+	width: 200%;
+}
+
+
+#mapView{
+	position:absolute;
+}
+
+textarea {
+	resize: none;
+}
